@@ -250,8 +250,18 @@
 
     <p>📍 Based in Toronto, Ontario, proudly serving clients nationwide.</p>
 
-   <!-- Google Review Button Section -->
+ <!-- Rating + Google Review Button Section -->
 <section>
+
+  <!-- Rating Display -->
+  <div class="rating-box">
+    <div class="rating-stars" id="ratingStars"></div>
+    <div class="rating-text">
+      <span id="ratingValue">5.0</span> (<span id="ratingCount">3</span>)
+    </div>
+  </div>
+
+  <!-- Google Review Button -->
   <div class="review-container">
     <a href="https://g.page/r/CW2knUW1ff0KEBM/review" 
        class="review-button" 
@@ -260,9 +270,30 @@
       Please Review Us on Google
     </a>
   </div>
+
 </section>
 
 <style>
+  /* Rating Box */
+  .rating-box {
+    text-align: center;
+    margin: 20px 0 30px;
+    font-family: Arial, sans-serif;
+  }
+
+  .rating-stars {
+    font-size: 28px;
+    color: #fbbc04; /* Google gold */
+    margin-bottom: 6px;
+  }
+
+  .rating-text {
+    font-size: 18px;
+    color: #444;
+    font-weight: 600;
+  }
+
+  /* Review Button */
   .review-container {
     text-align: center;
     margin: 40px 0;
@@ -301,11 +332,33 @@
 </style>
 
 <script>
+  /* ⭐ Automatic Star Rendering ⭐ */
+  const rating = 5.0;   // <-- CHANGE THIS NUMBER ONLY
+  const count = 3;      // <-- CHANGE THIS NUMBER ONLY
+
+  document.getElementById("ratingValue").textContent = rating.toFixed(1);
+  document.getElementById("ratingCount").textContent = count;
+
+  function renderStars(value) {
+    const fullStars = Math.floor(value);
+    const halfStar = value % 1 >= 0.25 && value % 1 <= 0.75;
+    const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+    let stars = "";
+
+    for (let i = 0; i < fullStars; i++) stars += "★";
+    if (halfStar) stars += "☆"; // half star look
+    for (let i = 0; i < emptyStars; i++) stars += "✩";
+
+    return stars;
+  }
+
+  document.getElementById("ratingStars").textContent = renderStars(rating);
+
   function toggleMenu() {
     document.getElementById("navMenu").classList.toggle("show");
   }
 </script>
-
 
 </body>
 </html>
