@@ -250,69 +250,75 @@
 
     <p>📍 Based in Toronto, Ontario, proudly serving clients nationwide.</p>
 
- <!-- Rating + Google Review Button Section -->
 <section>
 
-  <!-- Rating Display -->
-  <div class="rating-box">
-    <div class="rating-stars" id="ratingStars"></div>
-    <div class="rating-text">
+  <!-- Combined Rating + Button -->
+  <div class="google-review-box">
+
+    <div class="review-title">Please Review Us on Google</div>
+
+    <div class="review-stars" id="ratingStars"></div>
+
+    <div class="review-score">
       <span id="ratingValue">5.0</span> (<span id="ratingCount">3</span>)
     </div>
-  </div>
 
-  <!-- Google Review Button -->
-  <div class="review-container">
     <a href="https://g.page/r/CW2knUW1ff0KEBM/review" 
        class="review-button" 
        target="_blank">
       <span class="google-icon"></span>
-      Please Review Us on Google
+      Leave a Review
     </a>
+
   </div>
 
 </section>
 
 <style>
-  /* Rating Box */
-  .rating-box {
+  .google-review-box {
     text-align: center;
-    margin: 20px 0 30px;
+    margin: 40px auto;
+    padding: 25px 20px;
+    max-width: 350px;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
     font-family: Arial, sans-serif;
   }
 
-  .rating-stars {
+  .review-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 12px;
+  }
+
+  .review-stars {
     font-size: 28px;
-    color: #fbbc04; /* Google gold */
+    color: #fbbc04;
     margin-bottom: 6px;
   }
 
-  .rating-text {
+  .review-score {
     font-size: 18px;
-    color: #444;
     font-weight: 600;
-  }
-
-  /* Review Button */
-  .review-container {
-    text-align: center;
-    margin: 40px 0;
+    color: #444;
+    margin-bottom: 18px;
   }
 
   .review-button {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     background: #ffffff;
     color: #444;
-    padding: 14px 26px;
+    padding: 12px 22px;
     border-radius: 50px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     text-decoration: none;
     border: 2px solid #4285f4;
     transition: all 0.25s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   }
 
   .review-button:hover {
@@ -323,8 +329,8 @@
   }
 
   .google-icon {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     background-image: url('https://www.gstatic.com/images/branding/product/1x/gsa_48dp.png');
     background-size: cover;
     display: inline-block;
@@ -347,17 +353,13 @@
     let stars = "";
 
     for (let i = 0; i < fullStars; i++) stars += "★";
-    if (halfStar) stars += "☆"; // half star look
+    if (halfStar) stars += "☆";
     for (let i = 0; i < emptyStars; i++) stars += "✩";
 
     return stars;
   }
 
   document.getElementById("ratingStars").textContent = renderStars(rating);
-
-  function toggleMenu() {
-    document.getElementById("navMenu").classList.toggle("show");
-  }
 </script>
 
 </body>
