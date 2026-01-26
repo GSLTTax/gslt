@@ -110,38 +110,64 @@
       }
     }
 
+    /* FIXED COVER IMAGE */
+    .cover-image {
+      position: fixed;
+      top: 70px; /* below header */
+      left: 0;
+      width: 100%;
+      height: 260px;
+      background-image: url('/Images/Cover page4.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+
+    .cover-overlay {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      height: 260px;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: -1;
+    }
+
+    /* OFFSET SO CONTENT STARTS BELOW COVER */
     .page-offset {
-      margin-top: 120px;
+      margin-top: 350px;
     }
 
     /* HERO SECTION */
     .hero {
       background: linear-gradient(to bottom, #e6f0ff, #bcd4ff);
-      padding: 80px 20px;
+      padding: 70px 20px 60px;
       text-align: center;
       color: #002147;
     }
 
     .hero h1 {
-      font-size: 2.6rem;
+      font-size: 2.1rem;
       font-weight: 700;
-      margin-bottom: 15px;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
     }
 
     .hero p {
-      font-size: 1.3rem;
+      font-size: 1.15rem;
       max-width: 700px;
-      margin: 0 auto 25px;
-      line-height: 1.6;
+      margin: 0 auto 22px;
+      line-height: 1.55;
     }
 
     .hero .cta-btn {
       background: #003c8f;
       color: white;
-      padding: 14px 28px;
-      border-radius: 6px;
+      padding: 12px 26px;
+      border-radius: 4px;
       text-decoration: none;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
       transition: 0.3s;
     }
@@ -293,6 +319,11 @@
     </div>
   </div>
 
+  <!-- FIXED COVER IMAGE -->
+  <div class="cover-image"></div>
+  <div class="cover-overlay"></div>
+
+  <!-- OFFSET BELOW COVER -->
   <div class="page-offset"></div>
 
   <!-- HERO -->
