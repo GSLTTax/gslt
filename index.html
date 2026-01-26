@@ -178,6 +178,79 @@
     .review-button:hover {
       background-color: #145f8c;
     }
+
+    /* GOOGLE REVIEW BOX */
+    .google-review-box {
+      text-align: center;
+      margin: 40px auto;
+      padding: 25px 20px;
+      max-width: 350px;
+      border-radius: 16px;
+      background: #ffffff;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      font-family: Arial, sans-serif;
+    }
+
+    .review-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 12px;
+    }
+
+    .review-stars {
+      font-size: 28px;
+      color: #fbbc04;
+      margin-bottom: 6px;
+    }
+
+    .review-score {
+      font-size: 18px;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 18px;
+    }
+
+    .review-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      color: #444;
+      padding: 12px 22px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid #4285f4;
+      transition: all 0.25s ease;
+    }
+
+    .review-button:hover {
+      background: #4285f4;
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(66,133,244,0.4);
+    }
+
+    .google-icon {
+      width: 20px;
+      height: 20px;
+      background-image: url('https://www.gstatic.com/images/branding/product/1x/gsa_48dp.png');
+      background-size: cover;
+      display: inline-block;
+    }
+
+    /* ⭐ FIX EXTRA WHITE SPACE ON MOBILE ⭐ */
+    @media (max-width: 1024px) {
+      body {
+        background-attachment: scroll !important;
+        background-size: cover !important;
+        background-color: #e6f0ff !important;
+        min-height: auto !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -272,69 +345,6 @@
   </div>
 
 </section>
-
-<style>
-  .google-review-box {
-    text-align: center;
-    margin: 40px auto;
-    padding: 25px 20px;
-    max-width: 350px;
-    border-radius: 16px;
-    background: #ffffff;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    font-family: Arial, sans-serif;
-  }
-
-  .review-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 12px;
-  }
-
-  .review-stars {
-    font-size: 28px;
-    color: #fbbc04;
-    margin-bottom: 6px;
-  }
-
-  .review-score {
-    font-size: 18px;
-    font-weight: 600;
-    color: #444;
-    margin-bottom: 18px;
-  }
-
-  .review-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: #ffffff;
-    color: #444;
-    padding: 12px 22px;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-    border: 2px solid #4285f4;
-    transition: all 0.25s ease;
-  }
-
-  .review-button:hover {
-    background: #4285f4;
-    color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 14px rgba(66,133,244,0.4);
-  }
-
-  .google-icon {
-    width: 20px;
-    height: 20px;
-    background-image: url('https://www.gstatic.com/images/branding/product/1x/gsa_48dp.png');
-    background-size: cover;
-    display: inline-block;
-  }
-</style>
 
 <script>
   /* ⭐ Automatic Star Rendering ⭐ */
