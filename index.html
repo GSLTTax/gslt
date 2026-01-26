@@ -12,8 +12,29 @@
       margin: 0;
       font-family: 'Inter', sans-serif;
       color: #002147;
-      background: #ffffff;
+
+      /* FULL SCREEN FIXED BACKGROUND */
+      background-image:
+        url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='0' y='14' font-size='10' fill='%23002147' opacity='0.06'>GSLT GSLT GSLT GSLT GSLT GSLT</text><text x='0' y='42' font-size='10' fill='%23002147' opacity='0.06'>GSLT GSLT GSLT GSLT GSLT GSLT</text><text x='0' y='70' font-size='10' fill='%23002147' opacity='0.06'>GSLT GSLT GSLT GSLT GSLT GSLT</text><text x='0' y='98' font-size='10' fill='%23002147' opacity='0.06'>GSLT GSLT GSLT GSLT GSLT GSLT</text></svg>"),
+        url('/Images/Cover page4.png');
+      background-repeat: repeat, no-repeat;
+      background-size: auto, cover;
+      background-position: top left, center;
+      background-attachment: scroll, fixed;
+
+      min-height: 100vh;
       overflow-x: hidden;
+    }
+
+    /* DARK OVERLAY FOR HERO READABILITY */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: -1;
     }
 
     /* HEADER */
@@ -22,8 +43,8 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(255, 255, 255, 0.97);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       z-index: 9999;
       backdrop-filter: blur(6px);
     }
@@ -31,7 +52,7 @@
     .header-inner {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 10px 20px;
+      padding: 8px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -110,55 +131,35 @@
       }
     }
 
-    /* FIXED COVER IMAGE */
-    .cover-image {
-      position: fixed;
-      top: 70px; /* below header */
-      left: 0;
-      width: 100%;
-      height: 260px;
-      background-image: url('/Images/Cover page4.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index: -1;
-    }
-
-    .cover-overlay {
-      position: fixed;
-      top: 70px;
-      left: 0;
-      width: 100%;
-      height: 260px;
-      background: rgba(0, 0, 0, 0.35);
-      z-index: -1;
-    }
-
-    /* OFFSET SO CONTENT STARTS BELOW COVER */
     .page-offset {
-      margin-top: 350px;
+      margin-top: 120px;
     }
 
-    /* HERO SECTION */
+    /* HERO ON TOP OF FULL SCREEN IMAGE */
     .hero {
-      background: linear-gradient(to bottom, #e6f0ff, #bcd4ff);
-      padding: 70px 20px 60px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      color: #002147;
+      padding: 0 20px;
+      color: white;
     }
 
     .hero h1 {
-      font-size: 2.1rem;
+      font-size: 2.4rem;
       font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 12px;
+      margin-bottom: 15px;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.4);
     }
 
     .hero p {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       max-width: 700px;
-      margin: 0 auto 22px;
-      line-height: 1.55;
+      margin: 0 auto 25px;
+      line-height: 1.6;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
     }
 
     .hero .cta-btn {
@@ -180,7 +181,10 @@
     .section {
       max-width: 900px;
       margin: 3rem auto;
-      padding: 0 20px;
+      padding: 2rem 1rem;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     }
 
     .section h2 {
@@ -292,6 +296,9 @@
 
 <body>
 
+  <!-- DARK OVERLAY -->
+  <div class="overlay"></div>
+
   <!-- HEADER -->
   <div class="fixed-header">
     <div class="header-inner">
@@ -319,14 +326,9 @@
     </div>
   </div>
 
-  <!-- FIXED COVER IMAGE -->
-  <div class="cover-image"></div>
-  <div class="cover-overlay"></div>
-
-  <!-- OFFSET BELOW COVER -->
   <div class="page-offset"></div>
 
-  <!-- HERO -->
+  <!-- HERO ON TOP OF FULL SCREEN BACKGROUND -->
   <section class="hero">
     <h1>Professional Tax & Accounting Services You Can Trust</h1>
     <p>Serving individuals and businesses across Canada with accuracy, compliance, and care.</p>
