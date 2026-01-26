@@ -161,24 +161,6 @@
       line-height: 1.6;
     }
 
-    .review-button {
-      display: inline-block;
-      background-color: #1c87c9;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      font-size: 1.2rem;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s ease;
-      margin-top: 2rem;
-    }
-
-    .review-button:hover {
-      background-color: #145f8c;
-    }
-
     /* GOOGLE REVIEW BOX */
     .google-review-box {
       text-align: center;
@@ -241,13 +223,20 @@
       display: inline-block;
     }
 
-    /* ⭐ FIX EXTRA WHITE SPACE ON MOBILE ⭐ */
+    /* ⭐ FINAL FIX FOR EXTRA WHITE SPACE ⭐ */
     @media (max-width: 1024px) {
+
+      /* Remove fixed background that causes phantom scroll */
       body {
         background-attachment: scroll !important;
         background-size: cover !important;
         background-color: #e6f0ff !important;
         min-height: auto !important;
+      }
+
+      /* Prevent box-shadow from extending scroll height */
+      .google-review-box {
+        overflow: hidden !important;
       }
     }
 
