@@ -8,6 +8,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet" />
 
   <style>
+/* TOP ANNOUNCEMENT BANNER */
+.announcement-bar {
+  width: 100%;
+  background: #003366;
+  color: white;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  padding: 8px 0;
+  text-align: center;
+}
+
+.announcement-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: scroll-left 18s linear infinite;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Shift header down because banner is above it */
+.fixed-header {
+  top: 40px;
+}
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -25,7 +57,12 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
-
+<!-- TOP ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  <div class="announcement-text">
+    📢 Individual tax filing for 2025 opens February 23. Send your documents early to avoid delays and receive your refund faster.
+  </div>
+</div>
     /* DARK OVERLAY FOR HERO READABILITY */
     .overlay {
       position: fixed;
