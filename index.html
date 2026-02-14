@@ -10,12 +10,14 @@
   <style>
 /* TOP ANNOUNCEMENT BANNER */
 .announcement-bar {
+  position: fixed;
+  top: 70px;
   width: 100%;
   background: #003366;
   color: white;
-  overflow: hidden;
   padding: 8px 0;
   text-align: center;
+  z-index: 10000;
 }
 
 .announcement-text {
@@ -138,10 +140,14 @@ body {
 
 @media (max-width: 768px) {
   .nav-tabs {
-    display: none;
-    flex-direction: column;
+    position: fixed;        /* make it float */
+    top: 70px;              /* same height as your header */
+    left: 0;
     width: 100%;
     background: white;
+    z-index: 10001;         /* higher than announcement bar */
+    display: none;
+    flex-direction: column;
     padding: 10px 0;
     border-top: 1px solid #ccc;
   }
