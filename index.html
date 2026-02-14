@@ -141,15 +141,15 @@ body {
 @media (max-width: 768px) {
   .nav-tabs {
     position: fixed;        /* make it float */
-    top: 120px;              /* same height as your header */
+    top: 0;              /* same height as your header */
     left: 0;
     width: 100%;
     background: white;
-    z-index: 10001;         /* higher than announcement bar */
+    z-index: 10002;         /* higher than announcement bar */
     display: none;
     flex-direction: column;
     padding: 10px 0;
-    border-top: 1px solid #ccc;
+    border-top: none;
   }
 
   .nav-tabs.show {
