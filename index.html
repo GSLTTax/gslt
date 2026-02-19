@@ -106,36 +106,7 @@
       margin-left: auto;
     }
 
-    @media (max-width: 768px) {
-      .header-center img {
-        height: 35px;
-      }
-      .header-center span {
-        font-size: 1.1rem;
-      }
-
-      .nav-tabs {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: white;
-        padding: 10px 0;
-        border-top: 1px solid #ccc;
-      }
-
-      .nav-tabs.show {
-        display: flex;
-      }
-
-      .hamburger {
-        display: block;
-      }
-
-      .header-inner {
-        justify-content: space-between;
-      }
-    }
-@media (max-width: 768px) {
+   @media (max-width: 768px) {
   .header-center img {
     height: 35px;
   }
@@ -144,10 +115,14 @@
   }
 
   .nav-tabs {
-    display: none;
-    flex-direction: column;
+    position: fixed;
+    top: 120px;
+    left: 0;
     width: 100%;
     background: white;
+    z-index: 10002;
+    display: none;
+    flex-direction: column;
     padding: 10px 0;
     border-top: 1px solid #ccc;
   }
@@ -159,22 +134,13 @@
   .hamburger {
     display: block;
   }
-
-  .header-inner {
-    justify-content: space-between;
-  }
 }
 
-/* ⭐ ADD THIS NEW BLOCK DIRECTLY BELOW THE ONE ABOVE ⭐ */
-@media (max-width: 768px) {
-  .header-left {
-    order: 2; /* CPA logo moves to the right */
-  }
 
-  .header-center {
-    order: 1; /* GSLT logo + name moves to the left */
-  }
-}
+      .header-inner {
+        justify-content: space-between;
+      }
+    }
 
     .page-offset {
       margin-top: 120px;
