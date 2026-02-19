@@ -106,21 +106,14 @@
       margin-left: auto;
     }
 
-   @media (max-width: 768px) {
-  .header-center img {
-    height: 35px;
-  }
-  .header-center span {
-    font-size: 1.1rem;
-  }
-
+  @media (max-width: 768px) {
   .nav-tabs {
-    position: fixed;
-    top: 120px;
+    position: fixed;        /* make it float */
+    top: 120px;              /* same height as your header */
     left: 0;
     width: 100%;
     background: white;
-    z-index: 10002;
+    z-index: 10002;         /* higher than announcement bar */
     display: none;
     flex-direction: column;
     padding: 10px 0;
@@ -135,7 +128,6 @@
     display: block;
   }
 }
-
 
       .header-inner {
         justify-content: space-between;
